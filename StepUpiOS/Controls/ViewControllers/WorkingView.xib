@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="13771" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13772"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Gotham-Bold.otf">
+            <string>Gotham-Bold</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="WorkingViewController" customModule="StepUpiOS">
+            <connections>
+                <outlet property="loadingImageView" destination="os2-UL-Jsn" id="JIl-Qd-bl8"/>
+                <outlet property="loadingSpinnerLabel" destination="NIg-DL-lJB" id="Sjr-sK-G3f"/>
+                <outlet property="loadingSpinnerView" destination="zDj-k4-tvC" id="uBb-xS-WyK"/>
+                <outlet property="view" destination="iN0-l3-epB" id="mWT-m7-sB4"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="IpB-cH-n28" userLabel="LoadingSpinner">
+                    <rect key="frame" x="112.5" y="258.5" width="150" height="150"/>
+                    <subviews>
+                        <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="zDj-k4-tvC" userLabel="ContainerView">
+                            <rect key="frame" x="8" y="8" width="134" height="134"/>
+                            <subviews>
+                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="os2-UL-Jsn">
+                                    <rect key="frame" x="17" y="0.0" width="100" height="100"/>
+                                    <constraints>
+                                        <constraint firstAttribute="width" constant="100" id="ARz-zS-lAP"/>
+                                        <constraint firstAttribute="height" constant="100" id="dBS-7x-icK"/>
+                                    </constraints>
+                                </imageView>
+                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Loading..." textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NIg-DL-lJB">
+                                    <rect key="frame" x="0.0" y="108" width="134" height="26"/>
+                                    <fontDescription key="fontDescription" name="Gotham-Bold" family="Gotham" pointSize="16"/>
+                                    <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                    <nil key="highlightedColor"/>
+                                </label>
+                            </subviews>
+                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                            <constraints>
+                                <constraint firstItem="NIg-DL-lJB" firstAttribute="top" secondItem="os2-UL-Jsn" secondAttribute="bottom" constant="8" symbolic="YES" id="S1L-UT-7mh"/>
+                                <constraint firstItem="NIg-DL-lJB" firstAttribute="leading" secondItem="zDj-k4-tvC" secondAttribute="leading" id="VTa-jK-v5q"/>
+                                <constraint firstItem="os2-UL-Jsn" firstAttribute="top" secondItem="zDj-k4-tvC" secondAttribute="top" id="bBp-71-jab"/>
+                                <constraint firstAttribute="trailing" secondItem="NIg-DL-lJB" secondAttribute="trailing" id="dkl-lu-RvU"/>
+                                <constraint firstAttribute="bottom" secondItem="NIg-DL-lJB" secondAttribute="bottom" id="fyb-xv-v6Z"/>
+                                <constraint firstItem="os2-UL-Jsn" firstAttribute="centerX" secondItem="zDj-k4-tvC" secondAttribute="centerX" id="gKI-Lk-ilq"/>
+                            </constraints>
+                        </view>
+                    </subviews>
+                    <color key="backgroundColor" white="0.0" alpha="0.60057255993150682" colorSpace="calibratedWhite"/>
+                    <constraints>
+                        <constraint firstItem="zDj-k4-tvC" firstAttribute="centerX" secondItem="IpB-cH-n28" secondAttribute="centerX" id="1Kk-HR-war"/>
+                        <constraint firstItem="zDj-k4-tvC" firstAttribute="top" secondItem="IpB-cH-n28" secondAttribute="top" constant="8" id="Bcd-Hy-8hX"/>
+                        <constraint firstAttribute="trailing" secondItem="zDj-k4-tvC" secondAttribute="trailing" constant="8" id="FCo-1W-kAj"/>
+                        <constraint firstAttribute="height" constant="150" id="GIc-A4-pEF"/>
+                        <constraint firstAttribute="width" constant="150" id="LBB-mB-pgU"/>
+                        <constraint firstItem="zDj-k4-tvC" firstAttribute="centerY" secondItem="IpB-cH-n28" secondAttribute="centerY" id="Ypd-nv-MYG"/>
+                        <constraint firstAttribute="bottom" secondItem="zDj-k4-tvC" secondAttribute="bottom" constant="8" id="enW-Aj-yH3"/>
+                        <constraint firstItem="zDj-k4-tvC" firstAttribute="leading" secondItem="IpB-cH-n28" secondAttribute="leading" constant="8" id="kCO-QO-tgb"/>
+                    </constraints>
+                </view>
+            </subviews>
+            <color key="backgroundColor" white="0.0" alpha="0.34623822773972601" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="IpB-cH-n28" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="Npd-Ys-vm8"/>
+                <constraint firstItem="IpB-cH-n28" firstAttribute="centerY" secondItem="iN0-l3-epB" secondAttribute="centerY" id="bpA-JQ-na8"/>
+            </constraints>
+            <nil key="simulatedStatusBarMetrics"/>
+            <nil key="simulatedTopBarMetrics"/>
+            <nil key="simulatedBottomBarMetrics"/>
+            <point key="canvasLocation" x="24.5" y="52.5"/>
+        </view>
+    </objects>
+</document>
