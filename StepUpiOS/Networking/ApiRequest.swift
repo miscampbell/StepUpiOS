@@ -17,6 +17,9 @@ open class ApiRequest<T: ApiRequestOptionsProtcol>:ApiRequestProtcol  {
     private var sessionTask: URLSessionDataTask?
     private let completionBlock: ApiRequestCompletionBlock
     
+    private var urlResponse: URLResponse?
+    private var responseData: Data?
+    
     public var requestMethod: RequestMethod = .get
     public var contentType: RequestContentType = .applicationJson
     
@@ -62,15 +65,18 @@ open class ApiRequest<T: ApiRequestOptionsProtcol>:ApiRequestProtcol  {
         let urlRequest = createUrlRequest()
         
         sessionTask = URLSession.shared.dataTask(with: urlRequest) { (data, urlResponse, error) in
+            self.responseData = data
+            self.urlResponse = urlResponse
+            
             if let error = error {
-                print(error)
+                Logger.error(message: "ApiRequest Error Detected", additionalData: ["Error": error, "Description": self.description()])
                 self.completionBlock(false, data, error)
                 return
             }
 
             guard let httpResponse = urlResponse as? HTTPURLResponse,
                 (200...299).contains(httpResponse.statusCode) else {
-                    print(String(data: data!, encoding: .utf8))
+                    Logger.info(message: "Error Response Code Detected", additionalData: ["Description": self.description()])
                     self.completionBlock(false, data, error)
                     return
             }
@@ -84,6 +90,8 @@ open class ApiRequest<T: ApiRequestOptionsProtcol>:ApiRequestProtcol  {
                 return
             }
 
+            Logger.error(message: "Unable to process mimeType: \(httpResponse.mimeType ?? "Unknown")", additionalData: ["Description": self.description()])
+            
             self.completionBlock(false, nil, nil)
             return
         }
@@ -92,7 +100,7 @@ open class ApiRequest<T: ApiRequestOptionsProtcol>:ApiRequestProtcol  {
     }
     
     public func cancel() {
-        
+        sessionTask?.cancel()
     }
     
     internal func copyApiRequestOptions() {
@@ -108,5 +116,17 @@ open class ApiRequest<T: ApiRequestOptionsProtcol>:ApiRequestProtcol  {
     
     public func addBodyData(_ name: String, value: Any) {
         self.bodyData[name] = value
+    }
+    
+    public func description() -> String {
+        var description = "\n========== API REQUEST ==========\n"
+        description += "URL:\t\t\(urlResponse?.url?.absoluteString ?? "URL Not Found")\n"
+        description += "MimeType:\t\(urlResponse?.mimeType ?? "MimeType Not Found")\n"
+        if let responseData = responseData, let data = String(data: responseData, encoding: .utf8) {
+            description += "Body:\t\t\(data)\n"
+        }
+        description += "==============================\n"
+        
+        return description
     }
 }

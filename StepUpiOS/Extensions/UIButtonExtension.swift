@@ -12,6 +12,7 @@ extension UIButton {
     open override var isHighlighted: Bool {
         didSet {
             let currentBackgroundColor = self.backgroundColor
+
             if (isHighlighted) {
                 self.backgroundColor = currentBackgroundColor?.withAlphaComponent(0.7)
             } else {

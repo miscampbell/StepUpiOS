@@ -27,6 +27,7 @@
 		4C96E4682016AC0000D95877 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C96E4672016AC0000D95877 /* UIColorExtension.swift */; };
 		4CA7397320117CEF0087DC4E /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA7397220117CEF0087DC4E /* UIButtonExtension.swift */; };
 		4CA87E7420115EAC00728EC6 /* ImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA87E7320115EAC00728EC6 /* ImageButton.swift */; };
+		4CCB734C201D434600E57AE5 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCB734B201D434600E57AE5 /* Logger.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		4C96E4672016AC0000D95877 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
 		4CA7397220117CEF0087DC4E /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		4CA87E7320115EAC00728EC6 /* ImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButton.swift; sourceTree = "<group>"; };
+		4CCB734B201D434600E57AE5 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -105,6 +107,7 @@
 		4C0265A1201148730011F92C /* StepUpiOS */ = {
 			isa = PBXGroup;
 			children = (
+				4CCB734A201D432A00E57AE5 /* Logger */,
 				4CA7397120117CA70087DC4E /* Extensions */,
 				4CA87E7120115E9000728EC6 /* Controls */,
 				4CA87E6E2011568D00728EC6 /* Networking */,
@@ -207,6 +210,14 @@
 				4CA87E7320115EAC00728EC6 /* ImageButton.swift */,
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		4CCB734A201D432A00E57AE5 /* Logger */ = {
+			isa = PBXGroup;
+			children = (
+				4CCB734B201D434600E57AE5 /* Logger.swift */,
+			);
+			path = Logger;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -328,6 +339,7 @@
 				4C7939A120118F0C00267FAE /* WorkingViewController.swift in Sources */,
 				4C8E69882017EBF600F0214B /* UINavigationControllerExtension.swift in Sources */,
 				4C0265DF20114B0F0011F92C /* ViewModel.swift in Sources */,
+				4CCB734C201D434600E57AE5 /* Logger.swift in Sources */,
 				4C727EB72014CA7400F501ED /* DateExtension.swift in Sources */,
 				4C0265DC201149B00011F92C /* ViewModelProtocol.swift in Sources */,
 				4C96E4682016AC0000D95877 /* UIColorExtension.swift in Sources */,
