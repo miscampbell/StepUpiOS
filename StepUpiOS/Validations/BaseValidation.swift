@@ -8,8 +8,15 @@
 
 import Foundation
 
-open class BaseValidation
+open class BaseValidation: ValidationProtocol
 {
+    public var validationErrors: [String] = []
+    
     public init() {
+    }
+    
+    public func validate(_ value: Any?) -> Bool {
+        fatalError("BaseValidation validate method should always be overridden")
+        return false
     }
 }

@@ -8,15 +8,15 @@
 
 import Foundation
 
-open class DateOfBirthValidation: BaseValidation, ValidationProtocol {
+open class DateOfBirthValidation: BaseValidation {
     var minimumDateOfBirth: Date
     
-    init(_ minimumDateOfBirth: Date) {
+    public init(_ minimumDateOfBirth: Date) {
         self.minimumDateOfBirth = minimumDateOfBirth
     }
     
-    public func validate(_ value: Any?) -> Bool {
-        if let dateValue = value as? Date, minimumDateOfBirth >= dateValue {
+    public override func validate(_ value: Any?) -> Bool {
+        if let dateValue = value as? Date, dateValue > minimumDateOfBirth {
             return false
         }
         

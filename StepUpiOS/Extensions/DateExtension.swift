@@ -68,4 +68,14 @@ extension Date {
             return suffix
         }
     }
+    
+    public func removeYears(_ yearsToRemove: Int) -> Date? {
+        let unitFlags: Set<Calendar.Component> = [.hour, .day, .month, .year]
+        var components = Calendar.current.dateComponents(unitFlags, from: self)
+        if let year = components.year {
+            components.year = year - yearsToRemove
+        }
+        
+        return Calendar.current.date(from: components)
+    }
 }

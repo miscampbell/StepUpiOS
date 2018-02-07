@@ -39,6 +39,9 @@
 		4C37BE702028F59800C98EA0 /* HeightConverter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C37BE6F2028F59800C98EA0 /* HeightConverter.swift */; };
 		4C37BE722028F5A100C98EA0 /* ValueConverterHelperTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C37BE712028F5A100C98EA0 /* ValueConverterHelperTest.swift */; };
 		4C37BE742028FAE300C98EA0 /* NSNumberExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C37BE732028FAE300C98EA0 /* NSNumberExtension.swift */; };
+		4C659331202B97D4004D8AA6 /* PasswordValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C659330202B97D4004D8AA6 /* PasswordValidation.swift */; };
+		4C659335202BA3DB004D8AA6 /* ConfirmPasswordValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C659334202BA3DB004D8AA6 /* ConfirmPasswordValidation.swift */; };
+		4C659337202BA587004D8AA6 /* ConfirmPasswordValidationTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C659336202BA587004D8AA6 /* ConfirmPasswordValidationTest.swift */; };
 		4C727EA220139F0C00F501ED /* ApiRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C727EA120139F0C00F501ED /* ApiRequest.swift */; };
 		4C727EA420139F5C00F501ED /* ApiRequestProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C727EA320139F5C00F501ED /* ApiRequestProtocol.swift */; };
 		4C727EAA2013BD0800F501ED /* ApiRequestOptions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C727EA92013BD0800F501ED /* ApiRequestOptions.swift */; };
@@ -105,6 +108,9 @@
 		4C37BE6F2028F59800C98EA0 /* HeightConverter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeightConverter.swift; sourceTree = "<group>"; };
 		4C37BE712028F5A100C98EA0 /* ValueConverterHelperTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ValueConverterHelperTest.swift; sourceTree = "<group>"; };
 		4C37BE732028FAE300C98EA0 /* NSNumberExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSNumberExtension.swift; sourceTree = "<group>"; };
+		4C659330202B97D4004D8AA6 /* PasswordValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PasswordValidation.swift; sourceTree = "<group>"; };
+		4C659334202BA3DB004D8AA6 /* ConfirmPasswordValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPasswordValidation.swift; sourceTree = "<group>"; };
+		4C659336202BA587004D8AA6 /* ConfirmPasswordValidationTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfirmPasswordValidationTest.swift; sourceTree = "<group>"; };
 		4C727EA120139F0C00F501ED /* ApiRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequest.swift; sourceTree = "<group>"; };
 		4C727EA320139F5C00F501ED /* ApiRequestProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequestProtocol.swift; sourceTree = "<group>"; };
 		4C727EA92013BD0800F501ED /* ApiRequestOptions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiRequestOptions.swift; sourceTree = "<group>"; };
@@ -261,10 +267,12 @@
 		4C37749E202A4536007669FA /* Validations */ = {
 			isa = PBXGroup;
 			children = (
+				4C335B92202A7821008665A3 /* BaseValidation.swift */,
 				4C3774A1202A4751007669FA /* IsEmptyValidation.swift */,
 				4C3774A6202A4B28007669FA /* EmailAddressValidation.swift */,
 				4C3774AA202A4FDE007669FA /* DateOfBirthValidation.swift */,
-				4C335B92202A7821008665A3 /* BaseValidation.swift */,
+				4C659330202B97D4004D8AA6 /* PasswordValidation.swift */,
+				4C659334202BA3DB004D8AA6 /* ConfirmPasswordValidation.swift */,
 			);
 			path = Validations;
 			sourceTree = "<group>";
@@ -275,6 +283,7 @@
 				4C3774A4202A49FF007669FA /* IsEmptyValidationTest.swift */,
 				4C3774A8202A4E7A007669FA /* EmailAddressValidationTest.swift */,
 				4C3774AC202A515C007669FA /* DateOfBirthValidationTest.swift */,
+				4C659336202BA587004D8AA6 /* ConfirmPasswordValidationTest.swift */,
 			);
 			path = Validations;
 			sourceTree = "<group>";
@@ -525,6 +534,7 @@
 				4C8E69882017EBF600F0214B /* UINavigationControllerExtension.swift in Sources */,
 				4C0265DF20114B0F0011F92C /* ViewModel.swift in Sources */,
 				4CCB734C201D434600E57AE5 /* Logger.swift in Sources */,
+				4C659331202B97D4004D8AA6 /* PasswordValidation.swift in Sources */,
 				4C727EB72014CA7400F501ED /* DateExtension.swift in Sources */,
 				4C0265DC201149B00011F92C /* ViewModelProtocol.swift in Sources */,
 				4C96E4682016AC0000D95877 /* UIColorExtension.swift in Sources */,
@@ -536,6 +546,7 @@
 				4C8CBBF02027A5B20032C3BA /* KeyboardInputNavigationControl.swift in Sources */,
 				4C3774A0202A4653007669FA /* ValidationProtocol.swift in Sources */,
 				4C37BE742028FAE300C98EA0 /* NSNumberExtension.swift in Sources */,
+				4C659335202BA3DB004D8AA6 /* ConfirmPasswordValidation.swift in Sources */,
 				4C8E69852017E40B00F0214B /* UINavigationBarExtension.swift in Sources */,
 				4C727EA220139F0C00F501ED /* ApiRequest.swift in Sources */,
 				4C257CF120266BB600AB3958 /* ControlValueProtocol.swift in Sources */,
@@ -552,6 +563,7 @@
 			files = (
 				4C257CE6202657DB00AB3958 /* PasswordTextFieldTest.swift in Sources */,
 				4C3774A5202A49FF007669FA /* IsEmptyValidationTest.swift in Sources */,
+				4C659337202BA587004D8AA6 /* ConfirmPasswordValidationTest.swift in Sources */,
 				4C257CE4202657DB00AB3958 /* HeightTextFieldTest.swift in Sources */,
 				4C37BE6C2028F01B00C98EA0 /* HeightPickerTest.swift in Sources */,
 				4C3774A9202A4E7A007669FA /* EmailAddressValidationTest.swift in Sources */,

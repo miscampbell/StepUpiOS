@@ -9,8 +9,8 @@
 import UIKit
 
 open class DobTextField: ImageTextField, ControlValueProtocol {
-    typealias valueTypeToGet = Date
-    typealias valueTypeToSet = Date
+    public typealias valueTypeToGet = Date
+    public typealias valueTypeToSet = Date
     
     var dateFormat: String = "dd MMMM YYYY"
     
@@ -36,14 +36,16 @@ open class DobTextField: ImageTextField, ControlValueProtocol {
         dateString.insert(dateText, at: 2)
         
         self.text = dateString as String
+        
+        initiateValidation()
     }
     
-    func getValue() -> Date {
+    public func getValue() -> Date {
         let datePicker = self.inputView as! UIDatePicker
         return datePicker.date
     }
     
-    func setValue(_ value: Date) {
+    public func setValue(_ value: Date) {
         let datePicker = self.inputView as! UIDatePicker
         datePicker.date = value
         self.onDatePickerChanged(datePicker)
@@ -53,6 +55,10 @@ open class DobTextField: ImageTextField, ControlValueProtocol {
         if let inputDatePickerView = self.inputView as? CustomDatePicker {
             inputDatePickerView.inputViewBackgroundColor = newColor
         }
+    }
+    
+    override func initiateValidation() {
+        _ = validate(getValue())
     }
 }
 

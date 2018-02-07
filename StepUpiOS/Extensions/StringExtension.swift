@@ -16,4 +16,20 @@ extension String {
     public func fontWithSize(_ size: CGFloat) -> UIFont {
         return UIFont(name: self, size: size)!
     }
+    
+    public var numbers: String {
+        return self.components(separatedBy: CharacterSet.decimalDigits.inverted).joined(separator: "")
+    }
+    
+    public var uppercaseLetters: String {
+        return self.components(separatedBy: CharacterSet.uppercaseLetters.inverted).joined(separator: "")
+    }
+    
+    public var lowercaseLetters: String {
+        return self.components(separatedBy: CharacterSet.uppercaseLetters.inverted).joined(separator: "")
+    }
+    
+    public func specialCharacters(_ specialCharacterSet: CharacterSet) -> String {
+        return self.components(separatedBy: specialCharacterSet.inverted).joined(separator: "")
+    }
 }

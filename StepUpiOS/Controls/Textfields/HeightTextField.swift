@@ -26,20 +26,20 @@ open class HeightTextField: ImageTextField, ControlValueProtocol, HeightPickerDe
         setValue(value)
     }
     
-    typealias valueTypeToGet = HeightValue
-    typealias valueTypeToSet = HeightValue
+    public typealias valueTypeToGet = HeightValue
+    public typealias valueTypeToSet = HeightValue
     
-    func getValue() -> HeightValue {
+    public func getValue() -> HeightValue {
         let heightPickerView = self.inputView as! HeightPicker
         return heightPickerView.getValue()
     }
     
-    func setValue(_ value: HeightValue) {
+    public func setValue(_ value: HeightValue) {
         self.text = value.stringValue
     }
 }
 
-struct HeightValue {
+public struct HeightValue {
     let firstValue: NSNumber
     let secondValue: NSNumber
     let measurement: HeightMeasurement

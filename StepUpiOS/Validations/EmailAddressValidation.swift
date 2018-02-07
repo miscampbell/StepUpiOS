@@ -8,12 +8,12 @@
 
 import Foundation
 
-open class EmailAddressValidation: BaseValidation, ValidationProtocol
+open class EmailAddressValidation: BaseValidation
 {
     private static let EmailRegex = "[A-Z0-9a-z._%+-]+@[A-Za-z0-9.-]+\\.[A-Za-z]{2,6}"
     private let emailPredicate = NSPredicate(format: "SELF MATCHES %@", EmailRegex)
     
-    public func validate(_ value: Any?) -> Bool {
+    public override func validate(_ value: Any?) -> Bool {
         return emailPredicate.evaluate(with: value)
     }
 }

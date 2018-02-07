@@ -9,5 +9,7 @@
 import Foundation
 
 public protocol ValidationProtocol {
+    var validationErrors: [String] { get set }
+    
     func validate(_ value: Any?) -> Bool
 }

@@ -184,7 +184,7 @@ open class ImageTextField: UITextField, UITextFieldDelegate, ControlValidationPr
     }
     
     public func textFieldDidEndEditing(_ textField: UITextField) {
-        _ = validate(textField.text)
+        initiateValidation()
         NotificationCenter.default.post(name: Constants.Notification.TextFieldDidEndEditing.notification, object: textField)
     }
     
@@ -196,5 +196,10 @@ open class ImageTextField: UITextField, UITextFieldDelegate, ControlValidationPr
     
     internal func inputViewBackgroundColorChanged(_ newColor: UIColor?)
     {
+    }
+    
+    internal func initiateValidation()
+    {
+        _ = validate(self.text)
     }
 }

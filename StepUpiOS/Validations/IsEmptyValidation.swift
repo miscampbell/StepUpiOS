@@ -8,8 +8,8 @@
 
 import Foundation
 
-open class IsEmptyValidation:BaseValidation, ValidationProtocol {
-    public func validate(_ value: Any?) -> Bool {
+open class IsEmptyValidation:BaseValidation {
+    public override func validate(_ value: Any?) -> Bool {
         if let val = value as? String {
             let whitespaceString = val.trimmingCharacters(in: CharacterSet.whitespaces)
             if whitespaceString.isEmpty {

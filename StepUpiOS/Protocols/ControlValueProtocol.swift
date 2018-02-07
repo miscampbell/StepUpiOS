@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol ControlValueProtocol {
+public protocol ControlValueProtocol {
     associatedtype valueTypeToGet
     func getValue() -> valueTypeToGet
     
