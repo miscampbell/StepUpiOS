@@ -44,3 +44,28 @@ extension String {
         return Formatter.RFC339.date(from: self)
     }
 }
+
+extension Date {
+    var daySuffix: String
+    {
+        get {
+            var suffix = ""
+            if let dayOfMonth = (Calendar.current as NSCalendar).components(NSCalendar.Unit.day, from: self).day {
+                switch dayOfMonth
+                {
+                case 1, 21, 31:
+                    suffix = "st"
+                case 2, 22:
+                    suffix = "nd"
+                case 3, 23:
+                    suffix = "rd"
+                default:
+                    suffix = "th";
+                }
+            } else {
+                Logger.error(message: "Unable to retrieve day from Date", additionalData: ["Date": self])
+            }
+            return suffix
+        }
+    }
+}

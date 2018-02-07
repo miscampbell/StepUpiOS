@@ -9,32 +9,61 @@
 import Foundation
 
 @IBDesignable
-open class ImageTextField: UITextField, UITextFieldDelegate {
-    @IBInspectable var indicatorImage: UIImage? {
+open class ImageTextField: UITextField, UITextFieldDelegate, ControlValidationProtocol {
+    public var validations: [ValidationProtocol] = []
+    public var validationActionBlock: ((Bool) -> Void)?
+    
+    @IBInspectable public var indicatorImage: UIImage? {
         didSet {
+            if indicatorImageView == nil {
+                addIndicatorImage()
+            }
+            
             self.indicatorImageView?.image = indicatorImage
         }
     }
-    @IBInspectable var indicatorImageTintColor: UIColor = UIColor.white {
+    @IBInspectable public var indicatorImageTintColor: UIColor = UIColor.white {
         didSet {
             self.indicatorImageView?.tintColor = indicatorImageTintColor
         }
     }
     private var indicatorImageView: UIImageView?
     
-    @IBInspectable var inset: CGFloat = 5
-    @IBInspectable var defaultImageSize: CGFloat = 16
+    @IBInspectable public var inset: CGFloat = 5
+    @IBInspectable public var defaultImageSize: CGFloat = 16
     
-    @IBInspectable var bottomBar: Bool = false
-    @IBInspectable var bottomBarColor: UIColor = UIColor.white
-    @IBInspectable var bottomBarHeight: CGFloat = 1.5
-    
-    @IBInspectable var checkboxImage: UIImage? {
+    @IBInspectable public var bottomBar: Bool = false {
         didSet {
+            if bottomBar {
+                addBottomBar()
+            }
+        }
+    }
+    @IBInspectable public var bottomBarColor: UIColor = UIColor.white {
+        didSet {
+            self.bottomSeparatorView?.backgroundColor = bottomBarColor
+        }
+    }
+    @IBInspectable public var bottomBarHeight: CGFloat = 1.5
+    
+    private var bottomSeparatorView: UIView?
+    
+    @IBInspectable public var checkboxImage: UIImage? {
+        didSet {
+            if checkboxImageView == nil {
+                addCheckboxImage()
+            }
             self.checkboxImageView?.image = checkboxImage
         }
     }
-    private var checkboxImageView: UIImageView?
+    public var checkboxImageView: UIImageView?
+    
+    @IBInspectable public var inputViewBackgroundColor: UIColor? {
+        didSet {
+            self.inputView?.backgroundColor = inputViewBackgroundColor
+            self.inputViewBackgroundColorChanged(inputViewBackgroundColor)
+        }
+    }
     
     public required init() {
         super.init(frame: .zero)
@@ -104,6 +133,8 @@ open class ImageTextField: UITextField, UITextFieldDelegate {
         self.addConstraint(NSLayoutConstraint(item: bottomSeperator, attribute: NSLayoutAttribute.top, relatedBy: NSLayoutRelation.equal, toItem: self, attribute: NSLayoutAttribute.bottom, multiplier: 1.0, constant: 10))
         
         bottomSeperator.backgroundColor = self.bottomBarColor
+        
+        self.bottomSeparatorView = bottomSeperator
     }
     
     func addCheckboxImage() {
@@ -151,6 +182,7 @@ open class ImageTextField: UITextField, UITextFieldDelegate {
     }
     
     public func textFieldDidEndEditing(_ textField: UITextField) {
+        _ = validate(textField.text)
         NotificationCenter.default.post(name: Constants.Notification.TextFieldDidEndEditing.notification, object: textField)
     }
     
@@ -160,4 +192,7 @@ open class ImageTextField: UITextField, UITextFieldDelegate {
         return shouldMoveToNextTextfield
     }
     
+    internal func inputViewBackgroundColorChanged(_ newColor: UIColor?)
+    {
+    }
 }

@@ -8,10 +8,10 @@
 
 import Foundation
 
-struct Constants {
-    struct Notification {
-        static let TextFieldDidBeginEditing = "TextFieldDidBeginEditing"
-        static let TextFieldDidEndEditing = "TextfieldDidEndEditingNotification"
-        static let TextFieldShouldReturn = "TextfieldShouldReturnNotification"
+public struct Constants {
+    public struct Notification {
+        public static let TextFieldDidBeginEditing = "TextFieldDidBeginEditing"
+        public static let TextFieldDidEndEditing = "TextfieldDidEndEditingNotification"
+        public static let TextFieldShouldReturn = "TextfieldShouldReturnNotification"
     }
 }
