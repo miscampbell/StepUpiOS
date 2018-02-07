@@ -19,7 +19,9 @@ open class ImageTextField: UITextField, UITextFieldDelegate, ControlValidationPr
                 addIndicatorImage()
             }
             
-            self.indicatorImageView?.image = indicatorImage
+            if let indicatorImageTemplate = indicatorImage?.withRenderingMode(UIImageRenderingMode.alwaysTemplate) {
+                self.indicatorImageView?.image = indicatorImageTemplate
+            }
         }
     }
     @IBInspectable public var indicatorImageTintColor: UIColor = UIColor.white {
