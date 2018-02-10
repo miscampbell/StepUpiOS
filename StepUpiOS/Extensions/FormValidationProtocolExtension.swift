@@ -10,15 +10,10 @@ import Foundation
 
 extension FormValidationProtocol
 {
-    public mutating func addControl(_ control: ControlValidationProtocol)
-    {
-        self.controlsToValidate.append(control)
-    }
-    
-    public func validate(_ value:Any) -> Bool
+    public func validate() -> Bool
     {
         for control in controlsToValidate {
-            if !control.validate(value) {
+            if !control.validate() {
                 return false
             }
         }

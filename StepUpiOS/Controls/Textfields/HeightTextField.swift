@@ -37,22 +37,26 @@ open class HeightTextField: ImageTextField, ControlValueProtocol, HeightPickerDe
     public func setValue(_ value: HeightValue) {
         self.text = value.stringValue
     }
+    
+    public override func getValueToValidate() -> Any? {
+        return getValue()
+    }
 }
 
 public struct HeightValue {
-    let firstValue: NSNumber
-    let secondValue: NSNumber
-    let measurement: HeightMeasurement
-    let calculatedValue: NSNumber?
+    public let firstValue: NSNumber
+    public let secondValue: NSNumber
+    public let measurement: HeightMeasurement
+    public let calculatedValue: NSNumber?
     
-    init(firstValue: NSNumber, secondValue: NSNumber, measurement: HeightMeasurement) {
+    public init(firstValue: NSNumber, secondValue: NSNumber, measurement: HeightMeasurement) {
         self.firstValue = firstValue
         self.secondValue = secondValue
         self.measurement = measurement
         self.calculatedValue = NumberFormatter.stringToDouble.number(from: "\(firstValue.stringValue).\(secondValue.stringValue)")
     }
     
-    var stringValue: String {
+    public var stringValue: String {
         get {
             var value = ""
             
@@ -68,11 +72,11 @@ public struct HeightValue {
     }
 }
 
-enum HeightMeasurement: Int {
+public enum HeightMeasurement: Int {
     case centimetres = 0
     case feetInches = 1
     
-    var stringValue: String {
+    public var stringValue: String {
         get {
             switch self {
                 case .centimetres:
@@ -80,6 +84,18 @@ enum HeightMeasurement: Int {
                 case .feetInches:
                     return "ft/inches"
             }
+        }
+    }
+    
+    public static func measurement(_ value: String) -> HeightMeasurement
+    {
+        switch value {
+            case "cm":
+                return .centimetres
+            case "ft":
+                return .feetInches
+            default:
+                return .centimetres
         }
     }
 }

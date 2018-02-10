@@ -14,10 +14,10 @@ extension ControlValidationProtocol {
         validations.append(validation)
     }
     
-    public func validate(_ value: Any) -> Bool
+    public func validate() -> Bool
     {
         for validation in validations {
-            if !validation.validate(value) {
+            if !validation.validate(self.getValueToValidate()) {
                 self.validationActionBlock?(false)
                 return false
             }

@@ -12,6 +12,11 @@
 		4C0265B0201148730011F92C /* StepUpiOS.h in Headers */ = {isa = PBXBuildFile; fileRef = 4C0265A2201148730011F92C /* StepUpiOS.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		4C0265DC201149B00011F92C /* ViewModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0265DB201149B00011F92C /* ViewModelProtocol.swift */; };
 		4C0265DF20114B0F0011F92C /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C0265DE20114B0F0011F92C /* ViewModel.swift */; };
+		4C178E86202F34EB00868C64 /* DataConvertibleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C178E85202F34EB00868C64 /* DataConvertibleProtocol.swift */; };
+		4C178E88202F354000868C64 /* DataConvertibleProtocolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C178E87202F354000868C64 /* DataConvertibleProtocolExtension.swift */; };
+		4C178E8A202F409600868C64 /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C178E89202F409600868C64 /* DataExtension.swift */; };
+		4C1B96AD202E1EEC00B8FA1C /* UIStoryboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1B96AC202E1EEC00B8FA1C /* UIStoryboardExtension.swift */; };
+		4C1B96AF202E7E9E00B8FA1C /* FileUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1B96AE202E7E9E00B8FA1C /* FileUpload.swift */; };
 		4C257CDB2026552200AB3958 /* GenderSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C257CDA2026552200AB3958 /* GenderSegmentedControl.swift */; };
 		4C257CDF2026572400AB3958 /* GenderSegmentedControlTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C257CDE2026572300AB3958 /* GenderSegmentedControlTest.swift */; };
 		4C257CE4202657DB00AB3958 /* HeightTextFieldTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C257CE1202657DB00AB3958 /* HeightTextFieldTest.swift */; };
@@ -81,6 +86,11 @@
 		4C0265AF201148730011F92C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		4C0265DB201149B00011F92C /* ViewModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModelProtocol.swift; sourceTree = "<group>"; };
 		4C0265DE20114B0F0011F92C /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		4C178E85202F34EB00868C64 /* DataConvertibleProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataConvertibleProtocol.swift; sourceTree = "<group>"; };
+		4C178E87202F354000868C64 /* DataConvertibleProtocolExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataConvertibleProtocolExtension.swift; sourceTree = "<group>"; };
+		4C178E89202F409600868C64 /* DataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtension.swift; sourceTree = "<group>"; };
+		4C1B96AC202E1EEC00B8FA1C /* UIStoryboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboardExtension.swift; sourceTree = "<group>"; };
+		4C1B96AE202E7E9E00B8FA1C /* FileUpload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUpload.swift; sourceTree = "<group>"; };
 		4C257CDA2026552200AB3958 /* GenderSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenderSegmentedControl.swift; sourceTree = "<group>"; };
 		4C257CDE2026572300AB3958 /* GenderSegmentedControlTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenderSegmentedControlTest.swift; sourceTree = "<group>"; };
 		4C257CE1202657DB00AB3958 /* HeightTextFieldTest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HeightTextFieldTest.swift; sourceTree = "<group>"; };
@@ -208,6 +218,7 @@
 				4C37749F202A4653007669FA /* ValidationProtocol.swift */,
 				4C3774AE202A5882007669FA /* ControlValidationProtocol.swift */,
 				4C3774B2202A636C007669FA /* FormValidationProtocol.swift */,
+				4C178E85202F34EB00868C64 /* DataConvertibleProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -362,6 +373,9 @@
 				4C37BE732028FAE300C98EA0 /* NSNumberExtension.swift */,
 				4C3774B0202A59E8007669FA /* ControlValidationProtocolExtension.swift */,
 				4C3774B4202A64C4007669FA /* FormValidationProtocolExtension.swift */,
+				4C1B96AC202E1EEC00B8FA1C /* UIStoryboardExtension.swift */,
+				4C178E87202F354000868C64 /* DataConvertibleProtocolExtension.swift */,
+				4C178E89202F409600868C64 /* DataExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -371,6 +385,7 @@
 			children = (
 				4C727EA120139F0C00F501ED /* ApiRequest.swift */,
 				4C727EA92013BD0800F501ED /* ApiRequestOptions.swift */,
+				4C1B96AE202E7E9E00B8FA1C /* FileUpload.swift */,
 			);
 			path = Networking;
 			sourceTree = "<group>";
@@ -523,6 +538,7 @@
 				4C96E43820168E2000D95877 /* ImageTextField.swift in Sources */,
 				4C257CEF20265ADD00AB3958 /* UIPickerViewExtension.swift in Sources */,
 				4C727EAA2013BD0800F501ED /* ApiRequestOptions.swift in Sources */,
+				4C1B96AD202E1EEC00B8FA1C /* UIStoryboardExtension.swift in Sources */,
 				4C7939A120118F0C00267FAE /* WorkingViewController.swift in Sources */,
 				4C335B93202A7822008665A3 /* BaseValidation.swift in Sources */,
 				4C257CEB2026588D00AB3958 /* HeightTextField.swift in Sources */,
@@ -541,15 +557,19 @@
 				4C37BE702028F59800C98EA0 /* HeightConverter.swift in Sources */,
 				4C3774B3202A636C007669FA /* FormValidationProtocol.swift in Sources */,
 				4C257CEA2026588D00AB3958 /* DobTextField.swift in Sources */,
+				4C178E8A202F409600868C64 /* DataExtension.swift in Sources */,
 				4C96E43C201690DE00D95877 /* StringExtension.swift in Sources */,
 				4CA87E7420115EAC00728EC6 /* ImageButton.swift in Sources */,
+				4C1B96AF202E7E9E00B8FA1C /* FileUpload.swift in Sources */,
 				4C8CBBF02027A5B20032C3BA /* KeyboardInputNavigationControl.swift in Sources */,
 				4C3774A0202A4653007669FA /* ValidationProtocol.swift in Sources */,
 				4C37BE742028FAE300C98EA0 /* NSNumberExtension.swift in Sources */,
 				4C659335202BA3DB004D8AA6 /* ConfirmPasswordValidation.swift in Sources */,
 				4C8E69852017E40B00F0214B /* UINavigationBarExtension.swift in Sources */,
+				4C178E86202F34EB00868C64 /* DataConvertibleProtocol.swift in Sources */,
 				4C727EA220139F0C00F501ED /* ApiRequest.swift in Sources */,
 				4C257CF120266BB600AB3958 /* ControlValueProtocol.swift in Sources */,
+				4C178E88202F354000868C64 /* DataConvertibleProtocolExtension.swift in Sources */,
 				4C257CDB2026552200AB3958 /* GenderSegmentedControl.swift in Sources */,
 				4CA7397320117CEF0087DC4E /* UIButtonExtension.swift in Sources */,
 				4C3774AB202A4FDE007669FA /* DateOfBirthValidation.swift in Sources */,

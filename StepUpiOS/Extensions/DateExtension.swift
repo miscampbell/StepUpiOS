@@ -46,6 +46,14 @@ extension String {
 }
 
 extension Date {
+    public var dateFromISO8601: String? {
+        return Formatter.iso8601.string(from: self)
+    }
+    
+    public var stringFromRFC339: String? {
+        return Formatter.RFC339.string(from: self)
+    }
+    
     var daySuffix: String
     {
         get {

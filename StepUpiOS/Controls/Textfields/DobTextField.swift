@@ -58,7 +58,11 @@ open class DobTextField: ImageTextField, ControlValueProtocol {
     }
     
     override func initiateValidation() {
-        _ = validate(getValue())
+        _ = validate()
+    }
+    
+    public override func getValueToValidate() -> Any? {
+        return getValue()
     }
 }
 

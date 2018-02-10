@@ -8,9 +8,10 @@
 
 import UIKit
 
-open class GenderSegmentedControl: UISegmentedControl
+open class GenderSegmentedControl: UISegmentedControl, ControlValueProtocol
 {
     private let segments = [Gender.Male.rawValue, Gender.Female.rawValue]
+    
     
     init() {
         super.init(frame: .zero)
@@ -35,19 +36,19 @@ open class GenderSegmentedControl: UISegmentedControl
     
         self.selectedSegmentIndex = 0
     }
-    
-    func setValue(_ gender: String?)
-    {
-        let index = segments.index(of: gender ?? "")
-        guard let selectedIndex = index else {
-            self.selectedSegmentIndex = 0
-            return
+
+    public typealias valueTypeToSet = Gender
+    public func setValue(_ value: Gender) {
+        switch value {
+            case .Female:
+                self.selectedSegmentIndex = 1
+            default:
+                self.selectedSegmentIndex = 1
         }
-        self.selectedSegmentIndex = selectedIndex
     }
     
-    func getValue() -> Gender
-    {
+    public typealias valueTypeToGet = Gender
+    public func getValue() -> Gender {
         var gender = Gender.Male
         if self.selectedSegmentIndex == 1
         {

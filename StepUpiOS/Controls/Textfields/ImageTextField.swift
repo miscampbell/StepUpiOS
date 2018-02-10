@@ -200,6 +200,10 @@ open class ImageTextField: UITextField, UITextFieldDelegate, ControlValidationPr
     
     internal func initiateValidation()
     {
-        _ = validate(self.text)
+        _ = validate()
+    }
+    
+    public func getValueToValidate() -> Any? {
+        return self.text
     }
 }

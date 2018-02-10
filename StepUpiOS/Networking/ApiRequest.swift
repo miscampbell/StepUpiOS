@@ -12,16 +12,20 @@ open class ApiRequest<T: ApiRequestOptionsProtcol>:ApiRequestProtcol  {
     
     private let apiRequestOptions: T
     private var headers: [String: String] = [:]
-    private var bodyData: [String: Any] = [:]
+    private var bodyData: [String: Data] = [:]
+    private var fileData: [String: FileUpload] = [:]
     
     private var sessionTask: URLSessionDataTask?
     private let completionBlock: ApiRequestCompletionBlock
     
     private var urlResponse: URLResponse?
     private var responseData: Data?
+    private var urlRequest: URLRequest?
     
     public var requestMethod: RequestMethod = .get
     public var contentType: RequestContentType = .applicationJson
+    
+    private let boundary = "StepUpiOSBoundary------------"
     
     public typealias ApiRequestCompletionBlock = (_ success: Bool, _ data: Any?, _ error: Error?) -> Void
     
@@ -54,7 +58,32 @@ open class ApiRequest<T: ApiRequestOptionsProtcol>:ApiRequestProtcol  {
                     }
                 } catch {
                 }
+                break
             case .multiPartFormData:
+                urlRequest.setValue("\(self.contentType.rawValue); boundary=\(boundary)", forHTTPHeaderField: "Content-Type")
+                
+                let boundaryPrefix = "--\(boundary)"
+                
+                var requestBodyData = Data()
+                for (key, value) in bodyData {
+                    let content = "\r\n\(boundaryPrefix)\r\nContent-Disposition: form-data; name=\"\(key)\"\r\n\r\n"
+                    if let contentData = content.data(using: .utf8) {
+                        requestBodyData.append(contentData)
+                        requestBodyData.append(value)
+                    }
+                }
+                
+                for (key, fileUploadData) in self.fileData {
+                    let content = "\r\n\(boundaryPrefix)\r\nContent-Disposition: form-data; name=\"\(key)\"; filename=\"\(fileUploadData.filename)\"\r\nContent-Type: \(fileUploadData.contentType)\r\n\r\n"
+                    if let contentData = content.data(using: .utf8) {
+                        requestBodyData.append(contentData)
+                        requestBodyData.append(fileUploadData.data)
+                    }
+                }
+                
+                requestBodyData.append("\r\n\(boundaryPrefix)--".data(using: .utf8)!)
+                
+                urlRequest.httpBody = requestBodyData
                 break
         }
         
@@ -62,9 +91,9 @@ open class ApiRequest<T: ApiRequestOptionsProtcol>:ApiRequestProtcol  {
     }
     
     public func start() {
-        let urlRequest = createUrlRequest()
+        self.urlRequest = createUrlRequest()
         
-        sessionTask = URLSession.shared.dataTask(with: urlRequest) { (data, urlResponse, error) in
+        sessionTask = URLSession.shared.dataTask(with: self.urlRequest!) { (data, urlResponse, error) in
             self.responseData = data
             self.urlResponse = urlResponse
             
@@ -85,7 +114,6 @@ open class ApiRequest<T: ApiRequestOptionsProtcol>:ApiRequestProtcol  {
                 let data = data,
                 let json = try? JSONSerialization.jsonObject(with: data, options: []) {
 
-                print(json)
                 self.completionBlock(true, json, nil)
                 return
             }
@@ -114,18 +142,24 @@ open class ApiRequest<T: ApiRequestOptionsProtcol>:ApiRequestProtcol  {
         self.headers[name] = value
     }
     
-    public func addBodyData(_ name: String, value: Any) {
+    public func addBodyData(_ name: String, value: Data) {
         self.bodyData[name] = value
+    }
+    
+    public func addFileData(_ key: String, data: Data, filename: String, contentType: String) {
+        self.fileData[key] = FileUpload(data: data, filename: filename, contentType: contentType)
     }
     
     public func description() -> String {
         var description = "\n========== API REQUEST ==========\n"
         description += "URL:\t\t\(urlResponse?.url?.absoluteString ?? "URL Not Found")\n"
         description += "MimeType:\t\(urlResponse?.mimeType ?? "MimeType Not Found")\n"
+        
         if let responseData = responseData, let data = String(data: responseData, encoding: .utf8) {
-            description += "Body:\t\t\(data)\n"
+            description += "ResponseBody:\t\t\(data)\n"
         }
-        description += "==============================\n"
+        
+        description += "=================================\n"
         
         return description
     }

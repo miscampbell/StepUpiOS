@@ -11,6 +11,4 @@ import Foundation
 public protocol FormValidationProtocol {
     var controlsToValidate:[ControlValidationProtocol] { get set }
     var validationErrors:[String] { get set }
-    
-    mutating func addControl(_ controlToValidate: ControlValidationProtocol)
 }

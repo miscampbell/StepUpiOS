@@ -32,6 +32,6 @@ public enum RequestMethod: String {
 }
 
 public enum RequestContentType: String {
-    case multiPartFormData = "multipart/form-data; boundary="
+    case multiPartFormData = "multipart/form-data"
     case applicationJson = "application/json"
 }
