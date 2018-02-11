@@ -23,7 +23,7 @@ public class Logger {
         return components.isEmpty ? "" : components.last!
     }
     
-    private static func log(message: String, additionalData: [String: Any], logType: LogType, fileName: String = #file, line: Int = #line, column: Int = #column, funcName: String = #function)
+    private static func log(message: String, additionalData: [String: Any], logType: LogType, fileName: String, line: Int, column: Int, funcName: String)
     {
         #if DEBUG
             var additionalDataString = ""
@@ -37,27 +37,27 @@ public class Logger {
         #endif
     }
     
-    public static func error(message: String, additionalData: [String: Any] = [:]) {
-        log(message: message, additionalData: additionalData, logType: .error)
+    public static func error(message: String, additionalData: [String: Any] = [:], fileName: String = #file, line: Int = #line, column: Int = #column, funcName: String = #function) {
+        log(message: message, additionalData: additionalData, logType: .error, fileName: fileName, line: line, column: column, funcName: funcName)
     }
     
-    public static func info(message: String, additionalData: [String: Any] = [:]) {
-        log(message: message, additionalData: additionalData, logType: .info)
+    public static func info(message: String, additionalData: [String: Any] = [:], fileName: String = #file, line: Int = #line, column: Int = #column, funcName: String = #function) {
+        log(message: message, additionalData: additionalData, logType: .info, fileName: fileName, line: line, column: column, funcName: funcName)
     }
     
-    public static func debug(message: String, additionalData: [String: Any] = [:]) {
-        log(message: message, additionalData: additionalData, logType: .debug)
+    public static func debug(message: String, additionalData: [String: Any] = [:], fileName: String = #file, line: Int = #line, column: Int = #column, funcName: String = #function) {
+        log(message: message, additionalData: additionalData, logType: .debug, fileName: fileName, line: line, column: column, funcName: funcName)
     }
     
-    public static func verbose(message: String, additionalData: [String: Any] = [:]) {
-        log(message: message, additionalData: additionalData, logType: .verbose)
+    public static func verbose(message: String, additionalData: [String: Any] = [:], fileName: String = #file, line: Int = #line, column: Int = #column, funcName: String = #function) {
+        log(message: message, additionalData: additionalData, logType: .verbose, fileName: fileName, line: line, column: column, funcName: funcName)
     }
     
-    public static func warning(message: String, additionalData: [String: Any] = [:]) {
-        log(message: message, additionalData: additionalData, logType: .warning)
+    public static func warning(message: String, additionalData: [String: Any] = [:], fileName: String = #file, line: Int = #line, column: Int = #column, funcName: String = #function) {
+        log(message: message, additionalData: additionalData, logType: .warning, fileName: fileName, line: line, column: column, funcName: funcName)
     }
     
-    public static func severe(message: String, additionalData: [String: Any] = [:]) {
-        log(message: message, additionalData: additionalData, logType: .severe)
+    public static func severe(message: String, additionalData: [String: Any] = [:], fileName: String = #file, line: Int = #line, column: Int = #column, funcName: String = #function) {
+        log(message: message, additionalData: additionalData, logType: .severe, fileName: fileName, line: line, column: column, funcName: funcName)
     }
 }
