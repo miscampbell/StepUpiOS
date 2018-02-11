@@ -16,4 +16,9 @@ extension UINavigationController {
     open override var childViewControllerForStatusBarStyle: UIViewController? {
         return topViewController
     }
+    
+    public func resetRootViewController(_ viewController: UIViewController, animated: Bool = false) {
+        self.pushViewController(viewController, animated: animated)
+        self.viewControllers = [viewController]
+    }
 }

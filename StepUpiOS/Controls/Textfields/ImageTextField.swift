@@ -11,6 +11,7 @@ import Foundation
 @IBDesignable
 open class ImageTextField: UITextField, UITextFieldDelegate, ControlValidationProtocol {
     public var validations: [ValidationProtocol] = []
+    public var validationDependencies: [ControlValidationProtocol] = []
     public var validationActionBlock: ((Bool) -> Void)?
     
     @IBInspectable public var indicatorImage: UIImage? {

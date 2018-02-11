@@ -20,6 +20,11 @@ open class ImageButton: UIButton {
     }
     private var iconImageView: UIImageView!
     
+    public required init() {
+        super.init(frame: .zero)
+        initialiseView()
+    }
+    
     public required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         initialiseView()

@@ -14,8 +14,19 @@ extension ControlValidationProtocol {
         validations.append(validation)
     }
     
-    public func validate() -> Bool
+    public mutating func addValidationDependency(_ controlValidation: ControlValidationProtocol)
     {
+        validationDependencies.append(controlValidation)
+    }
+    
+    public func validate(_ shouldValidateDependencies: Bool = true) -> Bool
+    {
+        if shouldValidateDependencies {
+            for dependency in validationDependencies {
+                _ = dependency.validate(false)
+            }
+        }
+        
         for validation in validations {
             if !validation.validate(self.getValueToValidate()) {
                 self.validationActionBlock?(false)
@@ -24,6 +35,7 @@ extension ControlValidationProtocol {
         }
         
         self.validationActionBlock?(true)
+        
         return true
     }
 }

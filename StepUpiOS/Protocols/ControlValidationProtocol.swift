@@ -12,8 +12,10 @@ public protocol ControlValidationProtocol {
     var validations: [ValidationProtocol] { get set }
     var validationActionBlock: ((_ success: Bool) -> Void)? { get set }
     
+    var validationDependencies: [ControlValidationProtocol] { get set }
+    
     mutating func addValidation(_ validation: ValidationProtocol)
-    func validate() -> Bool
+    func validate(_ validateDependencies: Bool) -> Bool
     
     func getValueToValidate() -> Any?
 }
