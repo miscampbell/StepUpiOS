@@ -65,6 +65,7 @@
 		4CA7397320117CEF0087DC4E /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA7397220117CEF0087DC4E /* UIButtonExtension.swift */; };
 		4CA87E7420115EAC00728EC6 /* ImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA87E7320115EAC00728EC6 /* ImageButton.swift */; };
 		4CCB734C201D434600E57AE5 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCB734B201D434600E57AE5 /* Logger.swift */; };
+		4CE4F7CD2048AF6200B8BBA7 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE4F7CC2048AF6200B8BBA7 /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -139,6 +140,7 @@
 		4CA7397220117CEF0087DC4E /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		4CA87E7320115EAC00728EC6 /* ImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButton.swift; sourceTree = "<group>"; };
 		4CCB734B201D434600E57AE5 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
+		4CE4F7CC2048AF6200B8BBA7 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -181,6 +183,7 @@
 		4C0265A1201148730011F92C /* StepUpiOS */ = {
 			isa = PBXGroup;
 			children = (
+				4CE4F7C92048AC0200B8BBA7 /* Persistence */,
 				4C37749E202A4536007669FA /* Validations */,
 				4CA87E7120115E9000728EC6 /* Controls */,
 				4C37BE6D2028F54600C98EA0 /* Converters */,
@@ -419,6 +422,14 @@
 			path = Logger;
 			sourceTree = "<group>";
 		};
+		4CE4F7C92048AC0200B8BBA7 /* Persistence */ = {
+			isa = PBXGroup;
+			children = (
+				4CE4F7CC2048AF6200B8BBA7 /* CoreDataManager.swift */,
+			);
+			path = Persistence;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
@@ -574,6 +585,7 @@
 				4CA7397320117CEF0087DC4E /* UIButtonExtension.swift in Sources */,
 				4C3774AB202A4FDE007669FA /* DateOfBirthValidation.swift in Sources */,
 				4C257CF32026750F00AB3958 /* HeightPicker.swift in Sources */,
+				4CE4F7CD2048AF6200B8BBA7 /* CoreDataManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
