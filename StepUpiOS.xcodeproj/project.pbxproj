@@ -15,6 +15,8 @@
 		4C178E86202F34EB00868C64 /* DataConvertibleProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C178E85202F34EB00868C64 /* DataConvertibleProtocol.swift */; };
 		4C178E88202F354000868C64 /* DataConvertibleProtocolExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C178E87202F354000868C64 /* DataConvertibleProtocolExtension.swift */; };
 		4C178E8A202F409600868C64 /* DataExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C178E89202F409600868C64 /* DataExtension.swift */; };
+		4C189BDD205C69670079EE82 /* NSManagedObjectExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C189BDC205C69670079EE82 /* NSManagedObjectExtension.swift */; };
+		4C189BDF205C6B1B0079EE82 /* CoreDataModelProtocol.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C189BDE205C6B1B0079EE82 /* CoreDataModelProtocol.swift */; };
 		4C1B96AD202E1EEC00B8FA1C /* UIStoryboardExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1B96AC202E1EEC00B8FA1C /* UIStoryboardExtension.swift */; };
 		4C1B96AF202E7E9E00B8FA1C /* FileUpload.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C1B96AE202E7E9E00B8FA1C /* FileUpload.swift */; };
 		4C257CDB2026552200AB3958 /* GenderSegmentedControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C257CDA2026552200AB3958 /* GenderSegmentedControl.swift */; };
@@ -90,6 +92,8 @@
 		4C178E85202F34EB00868C64 /* DataConvertibleProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataConvertibleProtocol.swift; sourceTree = "<group>"; };
 		4C178E87202F354000868C64 /* DataConvertibleProtocolExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataConvertibleProtocolExtension.swift; sourceTree = "<group>"; };
 		4C178E89202F409600868C64 /* DataExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataExtension.swift; sourceTree = "<group>"; };
+		4C189BDC205C69670079EE82 /* NSManagedObjectExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NSManagedObjectExtension.swift; sourceTree = "<group>"; };
+		4C189BDE205C6B1B0079EE82 /* CoreDataModelProtocol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataModelProtocol.swift; sourceTree = "<group>"; };
 		4C1B96AC202E1EEC00B8FA1C /* UIStoryboardExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStoryboardExtension.swift; sourceTree = "<group>"; };
 		4C1B96AE202E7E9E00B8FA1C /* FileUpload.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileUpload.swift; sourceTree = "<group>"; };
 		4C257CDA2026552200AB3958 /* GenderSegmentedControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GenderSegmentedControl.swift; sourceTree = "<group>"; };
@@ -222,6 +226,7 @@
 				4C3774AE202A5882007669FA /* ControlValidationProtocol.swift */,
 				4C3774B2202A636C007669FA /* FormValidationProtocol.swift */,
 				4C178E85202F34EB00868C64 /* DataConvertibleProtocol.swift */,
+				4C189BDE205C6B1B0079EE82 /* CoreDataModelProtocol.swift */,
 			);
 			path = Protocols;
 			sourceTree = "<group>";
@@ -379,6 +384,7 @@
 				4C1B96AC202E1EEC00B8FA1C /* UIStoryboardExtension.swift */,
 				4C178E87202F354000868C64 /* DataConvertibleProtocolExtension.swift */,
 				4C178E89202F409600868C64 /* DataExtension.swift */,
+				4C189BDC205C69670079EE82 /* NSManagedObjectExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -546,6 +552,7 @@
 				4C727EA420139F5C00F501ED /* ApiRequestProtocol.swift in Sources */,
 				4C3774A7202A4B28007669FA /* EmailAddressValidation.swift in Sources */,
 				4C96E43A2016903E00D95877 /* Constants.swift in Sources */,
+				4C189BDD205C69670079EE82 /* NSManagedObjectExtension.swift in Sources */,
 				4C96E43820168E2000D95877 /* ImageTextField.swift in Sources */,
 				4C257CEF20265ADD00AB3958 /* UIPickerViewExtension.swift in Sources */,
 				4C727EAA2013BD0800F501ED /* ApiRequestOptions.swift in Sources */,
@@ -570,6 +577,7 @@
 				4C257CEA2026588D00AB3958 /* DobTextField.swift in Sources */,
 				4C178E8A202F409600868C64 /* DataExtension.swift in Sources */,
 				4C96E43C201690DE00D95877 /* StringExtension.swift in Sources */,
+				4C189BDF205C6B1B0079EE82 /* CoreDataModelProtocol.swift in Sources */,
 				4CA87E7420115EAC00728EC6 /* ImageButton.swift in Sources */,
 				4C1B96AF202E7E9E00B8FA1C /* FileUpload.swift in Sources */,
 				4C8CBBF02027A5B20032C3BA /* KeyboardInputNavigationControl.swift in Sources */,
