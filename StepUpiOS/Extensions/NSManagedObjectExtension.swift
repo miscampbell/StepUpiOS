@@ -18,16 +18,21 @@ extension CoreDataModelProtocol where Self: NSManagedObject {
         let fetchedData = fetchData(nil, sortBy: nil, ascending: nil, context: context)
         return fetchedData as! [T]
     }
-    
-    public func save(_ context: NSManagedObjectContext) {
-        if !isSaved {
-            let entity = NSEntityDescription.insertNewObject(forEntityName: type(of: self).entityName, into: context)
-            if let attributes = NSEntityDescription .entity(forEntityName: type(of: self).entityName, in: context)?.attributesByName {
-                for (attribute, description) in attributes {
-                    entity.setValue(self.value(forKey: attribute), forKey: attribute)
-                }
+
+    public func save() {
+        self.managedObjectContext?.performAndWait({
+            do {
+                try self.managedObjectContext?.save()
+            } catch {
+            Logger.error(message: "Error: \(error)")
             }
-        }
+        })
+    }
+    
+    public func delete() {
+        self.managedObjectContext?.performAndWait({
+            self.delete()
+        })
     }
     
     private var isSaved: Bool {
