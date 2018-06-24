@@ -31,7 +31,7 @@ extension CoreDataModelProtocol where Self: NSManagedObject {
     
     public func delete() {
         self.managedObjectContext?.performAndWait({
-            self.delete()
+            self.managedObjectContext?.delete(self)
         })
     }
     
