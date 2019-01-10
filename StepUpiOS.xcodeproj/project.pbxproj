@@ -64,8 +64,14 @@
 		4C96E43A2016903E00D95877 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C96E4392016903E00D95877 /* Constants.swift */; };
 		4C96E43C201690DE00D95877 /* StringExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C96E43B201690DE00D95877 /* StringExtension.swift */; };
 		4C96E4682016AC0000D95877 /* UIColorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C96E4672016AC0000D95877 /* UIColorExtension.swift */; };
+		4C9D27CD21E7E1BA00A75D55 /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9D27CC21E7E1BA00A75D55 /* Networking.swift */; };
+		4C9D27CF21E7E3A100A75D55 /* HTTPNetworking.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9D27CE21E7E3A100A75D55 /* HTTPNetworking.swift */; };
+		4C9D27D221E7ED3200A75D55 /* HTTPNetworkingTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4C9D27D121E7ED3200A75D55 /* HTTPNetworkingTest.swift */; };
+		4CA4F7002115075F00AA50A6 /* FileManagerExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA4F6FF2115075F00AA50A6 /* FileManagerExtension.swift */; };
 		4CA7397320117CEF0087DC4E /* UIButtonExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA7397220117CEF0087DC4E /* UIButtonExtension.swift */; };
 		4CA87E7420115EAC00728EC6 /* ImageButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CA87E7320115EAC00728EC6 /* ImageButton.swift */; };
+		4CC59AC820F2A5E900BBBD18 /* AsynchronousOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC59AC720F2A5E900BBBD18 /* AsynchronousOperation.swift */; };
+		4CC59ACA20F2A71100BBBD18 /* CoreDataAsynchronousOperation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CC59AC920F2A71100BBBD18 /* CoreDataAsynchronousOperation.swift */; };
 		4CCB734C201D434600E57AE5 /* Logger.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CCB734B201D434600E57AE5 /* Logger.swift */; };
 		4CE4F7CD2048AF6200B8BBA7 /* CoreDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4CE4F7CC2048AF6200B8BBA7 /* CoreDataManager.swift */; };
 /* End PBXBuildFile section */
@@ -141,8 +147,14 @@
 		4C96E4392016903E00D95877 /* Constants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		4C96E43B201690DE00D95877 /* StringExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtension.swift; sourceTree = "<group>"; };
 		4C96E4672016AC0000D95877 /* UIColorExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColorExtension.swift; sourceTree = "<group>"; };
+		4C9D27CC21E7E1BA00A75D55 /* Networking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
+		4C9D27CE21E7E3A100A75D55 /* HTTPNetworking.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPNetworking.swift; sourceTree = "<group>"; };
+		4C9D27D121E7ED3200A75D55 /* HTTPNetworkingTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HTTPNetworkingTest.swift; sourceTree = "<group>"; };
+		4CA4F6FF2115075F00AA50A6 /* FileManagerExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileManagerExtension.swift; sourceTree = "<group>"; };
 		4CA7397220117CEF0087DC4E /* UIButtonExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIButtonExtension.swift; sourceTree = "<group>"; };
 		4CA87E7320115EAC00728EC6 /* ImageButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageButton.swift; sourceTree = "<group>"; };
+		4CC59AC720F2A5E900BBBD18 /* AsynchronousOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsynchronousOperation.swift; sourceTree = "<group>"; };
+		4CC59AC920F2A71100BBBD18 /* CoreDataAsynchronousOperation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataAsynchronousOperation.swift; sourceTree = "<group>"; };
 		4CCB734B201D434600E57AE5 /* Logger.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Logger.swift; sourceTree = "<group>"; };
 		4CE4F7CC2048AF6200B8BBA7 /* CoreDataManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -187,6 +199,7 @@
 		4C0265A1201148730011F92C /* StepUpiOS */ = {
 			isa = PBXGroup;
 			children = (
+				4CC59AC620F2A5CB00BBBD18 /* Operations */,
 				4CE4F7C92048AC0200B8BBA7 /* Persistence */,
 				4C37749E202A4536007669FA /* Validations */,
 				4CA87E7120115E9000728EC6 /* Controls */,
@@ -206,6 +219,7 @@
 		4C0265AC201148730011F92C /* StepUpiOSTests */ = {
 			isa = PBXGroup;
 			children = (
+				4C9D27D021E7E9EC00A75D55 /* Networking */,
 				4C3774A3202A49EE007669FA /* Validations */,
 				4C37BE6E2028F58900C98EA0 /* Converters */,
 				4C257CDC202656FF00AB3958 /* Controls */,
@@ -368,6 +382,14 @@
 			path = Textfields;
 			sourceTree = "<group>";
 		};
+		4C9D27D021E7E9EC00A75D55 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				4C9D27D121E7ED3200A75D55 /* HTTPNetworkingTest.swift */,
+			);
+			path = Networking;
+			sourceTree = "<group>";
+		};
 		4CA7397120117CA70087DC4E /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
@@ -385,6 +407,7 @@
 				4C178E87202F354000868C64 /* DataConvertibleProtocolExtension.swift */,
 				4C178E89202F409600868C64 /* DataExtension.swift */,
 				4C189BDC205C69670079EE82 /* NSManagedObjectExtension.swift */,
+				4CA4F6FF2115075F00AA50A6 /* FileManagerExtension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -392,6 +415,8 @@
 		4CA87E6E2011568D00728EC6 /* Networking */ = {
 			isa = PBXGroup;
 			children = (
+				4C9D27CC21E7E1BA00A75D55 /* Networking.swift */,
+				4C9D27CE21E7E3A100A75D55 /* HTTPNetworking.swift */,
 				4C727EA120139F0C00F501ED /* ApiRequest.swift */,
 				4C727EA92013BD0800F501ED /* ApiRequestOptions.swift */,
 				4C1B96AE202E7E9E00B8FA1C /* FileUpload.swift */,
@@ -418,6 +443,15 @@
 				4CA87E7320115EAC00728EC6 /* ImageButton.swift */,
 			);
 			path = Buttons;
+			sourceTree = "<group>";
+		};
+		4CC59AC620F2A5CB00BBBD18 /* Operations */ = {
+			isa = PBXGroup;
+			children = (
+				4CC59AC720F2A5E900BBBD18 /* AsynchronousOperation.swift */,
+				4CC59AC920F2A71100BBBD18 /* CoreDataAsynchronousOperation.swift */,
+			);
+			path = Operations;
 			sourceTree = "<group>";
 		};
 		4CCB734A201D432A00E57AE5 /* Logger */ = {
@@ -562,8 +596,10 @@
 				4C257CEB2026588D00AB3958 /* HeightTextField.swift in Sources */,
 				4C3774B1202A59E8007669FA /* ControlValidationProtocolExtension.swift in Sources */,
 				4C257CEC2026588D00AB3958 /* PasswordTextField.swift in Sources */,
+				4CA4F7002115075F00AA50A6 /* FileManagerExtension.swift in Sources */,
 				4C3774AF202A5882007669FA /* ControlValidationProtocol.swift in Sources */,
 				4C3774A2202A4751007669FA /* IsEmptyValidation.swift in Sources */,
+				4CC59AC820F2A5E900BBBD18 /* AsynchronousOperation.swift in Sources */,
 				4C3774B5202A64C4007669FA /* FormValidationProtocolExtension.swift in Sources */,
 				4C8E69882017EBF600F0214B /* UINavigationControllerExtension.swift in Sources */,
 				4C0265DF20114B0F0011F92C /* ViewModel.swift in Sources */,
@@ -574,12 +610,14 @@
 				4C96E4682016AC0000D95877 /* UIColorExtension.swift in Sources */,
 				4C37BE702028F59800C98EA0 /* HeightConverter.swift in Sources */,
 				4C3774B3202A636C007669FA /* FormValidationProtocol.swift in Sources */,
+				4C9D27CF21E7E3A100A75D55 /* HTTPNetworking.swift in Sources */,
 				4C257CEA2026588D00AB3958 /* DobTextField.swift in Sources */,
 				4C178E8A202F409600868C64 /* DataExtension.swift in Sources */,
 				4C96E43C201690DE00D95877 /* StringExtension.swift in Sources */,
 				4C189BDF205C6B1B0079EE82 /* CoreDataModelProtocol.swift in Sources */,
 				4CA87E7420115EAC00728EC6 /* ImageButton.swift in Sources */,
 				4C1B96AF202E7E9E00B8FA1C /* FileUpload.swift in Sources */,
+				4CC59ACA20F2A71100BBBD18 /* CoreDataAsynchronousOperation.swift in Sources */,
 				4C8CBBF02027A5B20032C3BA /* KeyboardInputNavigationControl.swift in Sources */,
 				4C3774A0202A4653007669FA /* ValidationProtocol.swift in Sources */,
 				4C37BE742028FAE300C98EA0 /* NSNumberExtension.swift in Sources */,
@@ -587,6 +625,7 @@
 				4C8E69852017E40B00F0214B /* UINavigationBarExtension.swift in Sources */,
 				4C178E86202F34EB00868C64 /* DataConvertibleProtocol.swift in Sources */,
 				4C727EA220139F0C00F501ED /* ApiRequest.swift in Sources */,
+				4C9D27CD21E7E1BA00A75D55 /* Networking.swift in Sources */,
 				4C257CF120266BB600AB3958 /* ControlValueProtocol.swift in Sources */,
 				4C178E88202F354000868C64 /* DataConvertibleProtocolExtension.swift in Sources */,
 				4C257CDB2026552200AB3958 /* GenderSegmentedControl.swift in Sources */,
@@ -604,6 +643,7 @@
 				4C257CE6202657DB00AB3958 /* PasswordTextFieldTest.swift in Sources */,
 				4C3774A5202A49FF007669FA /* IsEmptyValidationTest.swift in Sources */,
 				4C659337202BA587004D8AA6 /* ConfirmPasswordValidationTest.swift in Sources */,
+				4C9D27D221E7ED3200A75D55 /* HTTPNetworkingTest.swift in Sources */,
 				4C257CE4202657DB00AB3958 /* HeightTextFieldTest.swift in Sources */,
 				4C37BE6C2028F01B00C98EA0 /* HeightPickerTest.swift in Sources */,
 				4C3774A9202A4E7A007669FA /* EmailAddressValidationTest.swift in Sources */,

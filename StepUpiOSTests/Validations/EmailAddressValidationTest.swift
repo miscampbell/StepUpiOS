@@ -11,10 +11,10 @@ import XCTest
 
 class EmailAddressValidationTest: XCTestCase {
     func testEmailAddressValidation() {
-        var emptyValidation = EmailAddressValidation()
-        XCTAssertFalse(emptyValidation.validate("testing")
-        XCTAssertFalse(emptyValidation.validate("    ")
-        XCTAssertTrue(emptyValidation.validate(" test@test.com ")
-        XCTAssertTrue(emptyValidation.validate("michael.testing@play.com")
+        let emptyValidation = EmailAddressValidation()
+        XCTAssertFalse(emptyValidation.validate("testing"))
+        XCTAssertFalse(emptyValidation.validate("    "))
+        XCTAssertTrue(emptyValidation.validate(" test@test.com "))
+        XCTAssertTrue(emptyValidation.validate("michael.testing@play.com"))
     }
 }

@@ -10,19 +10,19 @@
 import XCTest
 @testable import StepUpiOS
 
-class GenderSegmentedControlTest: GoalsTests
+class GenderSegmentedControlTest: XCTestCase
 {
     public func testSetValue()
     {
         let genderControl = GenderSegmentedControl()
-        genderControl.setValue(Gender.Female.rawValue)
+        genderControl.setValue(Gender.Female)
         XCTAssertEqual(genderControl.selectedSegmentIndex, 1)
     }
     
     public func testGetValue()
     {
         let genderControl = GenderSegmentedControl()
-        genderControl.setValue(Gender.Male.rawValue)
+        genderControl.setValue(Gender.Male)
         let gender:Gender = genderControl.getValue()
         XCTAssertEqual(gender, Gender.Male)
         XCTAssertEqual(genderControl.selectedSegmentIndex, 0)

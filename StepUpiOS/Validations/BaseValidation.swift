@@ -17,6 +17,5 @@ open class BaseValidation: ValidationProtocol
     
     public func validate(_ value: Any?) -> Bool {
         fatalError("BaseValidation validate method should always be overridden")
-        return false
     }
 }

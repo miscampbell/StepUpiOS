@@ -13,10 +13,10 @@ class IsEmptyValidationTest: XCTestCase {
     func testIsEmptyValidation()
     {
         var emptyValidation = IsEmptyValidation()
-        XCTAssertFalse(emptyValidation.validate("     ")
-        XCTAssertFalse(emptyValidation.validate("")
-        XCTAssertTrue(emptyValidation.validate(" Testing ")
-        XCTAssertTrue(emptyValidation.validate(" Te T TWE  ")
+        XCTAssertFalse(emptyValidation.validate("     "))
+        XCTAssertFalse(emptyValidation.validate(""))
+        XCTAssertTrue(emptyValidation.validate(" Testing "))
+        XCTAssertTrue(emptyValidation.validate(" Te T TWE  "))
     }
 }
 

@@ -9,14 +9,14 @@
 import XCTest
 @testable import StepUpiOS
 
-class HeightPickerTest: XCTestCas {
+class HeightPickerTest: XCTestCase {
     var testHeightValue: HeightValue = {
         return HeightValue(firstValue: NSNumber(value: 193), secondValue: NSNumber(value: 0), measurement: .centimetres)
-    }
+    }()
     
     func testSetHeightValue()
     {
-        let heightPicker = HeightPicker(nil, customBackgroundColor: nil)
+        let heightPicker = HeightPicker(testDelegate(), customBackgroundColor: nil)
         XCTAssert(heightPicker.selectedRow(inComponent: 0) == 0)
         XCTAssert(heightPicker.selectedRow(inComponent: 1) == 0)
         XCTAssert(heightPicker.selectedRow(inComponent: 2) == 0)
@@ -28,4 +28,12 @@ class HeightPickerTest: XCTestCas {
     {
         XCTAssert(true)
     }
+    
+    private struct testDelegate: HeightPickerDelegate {
+        func heightValueChanged(_ value: HeightValue) {
+            
+        }
+    }
 }
+
+
